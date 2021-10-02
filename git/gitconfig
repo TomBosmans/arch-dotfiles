@@ -1,0 +1,6 @@
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = nvim
+[user]
+	name = tbosmans
+	email = tom.94.bosmans@gmail.com
