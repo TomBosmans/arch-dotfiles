@@ -9,7 +9,7 @@ clean:
 
 symlink:
 	mkdir ~/.config; mkdir ~/.config/sxhkd
-	ln -s ~/.dotfiles/sxhk/sxhkdrc ~/.config/sxhkd/sxhkdrc
+	ln -s ~/.dotfiles/sxhkd/sxhkdrc ~/.config/sxhkd/sxhkdrc
 
 symlink_clean:
 	rm -rf ~/.config/sxhkd
