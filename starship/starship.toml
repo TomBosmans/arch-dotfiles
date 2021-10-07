@@ -1,0 +1,25 @@
+format = """
+$directory $git_branch$git_status
+[ ﬌](bold green) """
+
+right_format = """
+$time $git_metrics """
+
+[directory]
+style = "bold cyan"
+truncate_to_repo = false
+format = "[$path]($style)[$read_only]($read_only_style)"
+
+[git_branch]
+style = "bold green"
+symbol = ""
+format = "[$symbol](bold italic green)[$branch]($style)"
+
+[git_status]
+style = "bold italic red"
+format = "[$modified]($style)"
+
+[time]
+disabled = false
+format = "[$time](bold yellow)"
+time_format = "%H:%M"
