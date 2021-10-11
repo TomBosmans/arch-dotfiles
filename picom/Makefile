@@ -1,5 +1,5 @@
 install:
-	sudo pacman -S picom
+	sudo pacman -S picom-git
 	make symlink
 update:
 	sudo pacman -U picom
