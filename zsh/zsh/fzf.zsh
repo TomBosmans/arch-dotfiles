@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # COLORS
 local nord0_term="-1"
 local nord1_term="0"

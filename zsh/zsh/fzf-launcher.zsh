@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 applications() {
   ls ~/.local/share/applications \
   && ls /usr/share/applications
