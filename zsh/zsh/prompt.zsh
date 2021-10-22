@@ -1,11 +1,24 @@
 #!/usr/bin/env zsh
 
-autoload -Uz vcs_info
-precmd() { vcs_info }
-zstyle ':vcs_info:*' enable git
+working_dir() {
+  echo "%F{blue}%~%f"
+}
 
-zstyle ':vcs_info:git:*' formats '%F{green}%B%b%f'
-zstyle ':completion:*' menu select
-setopt PROMPT_SUBST
-PROMPT='%f%F{blue}%B%~%b%f ${vcs_info_msg_0_}%f
-$ '
+git_state() {
+  local BRANCH=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/*\(.*\)/\1/')
+
+  if [ ! -z $BRANCH ]; then
+    echo -n "%F{green}$BRANCH%f"
+
+    if [ ! -z "$(git status --short)" ]; then
+      echo " %F{red}✗%f"
+    else
+      echo " %F{green}✔%f"
+    fi
+  fi
+}
+
+precmd() { precmd() { print "" } } # new line after enter
+setopt prompt_subst
+PROMPT='%B$(working_dir)$(git_state)%b
+▶ '
