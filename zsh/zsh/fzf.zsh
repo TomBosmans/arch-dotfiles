@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+
 # COLORS
 local nord0_term="-1"
 local nord1_term="0"
@@ -16,10 +18,12 @@ local nord13_term="3"
 local nord14_term="2"
 local nord15_term="5"
 
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
-" --color=bg+:$nord1_term,bg:$nord0_term,spinner:$nord9_term,hl:$nord3_term"\
+local colors=" --color=bg+:$nord1_term,bg:$nord0_term,spinner:$nord9_term,hl:$nord3_term"\
 " --color=fg:$nord5_term,header:$nord8_term,info:$nord10_term,pointer:$nord9_term"\
 " --color=marker:$nord9_term,fg+:$nord6_term,prompt:$nord9_term,hl+:$nord9_term"
+
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
+$colors
 
 applicationLauncher() {
   ls ~/.local/share/applications |\
