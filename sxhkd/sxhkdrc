@@ -2,13 +2,37 @@
 # wm independent hotkeys
 #
 
+# Launcher
+super + space
+	alacritty --class="AlacrittyFloat" -e zsh ~/.zsh/fzf-launcher.zsh
+
 # terminal emulator
 super + n
 	alacritty
 
-# program launcher
-super + @space
-	dmenu_run
+# browser
+super + b
+	firefox www.duckduckgo.com
+
+# whatsapp
+super + w
+	flatpak run io.bit3.WhatsAppQT
+
+# discord
+super + d
+	flatpak run com.discordapp.Discord
+
+# steam
+super + g
+	flatpak run com.valvesoftware.Steam
+
+# signal
+super + s
+	flatpak run org.signal.Signal
+
+# YouTube
+super + y
+	gtk-launch youtube.desktop
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -31,7 +55,7 @@ super + alt + Escape
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }w
+super + q
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
